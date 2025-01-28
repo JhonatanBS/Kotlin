@@ -7,10 +7,12 @@
     android:background="@color/gray_700"
     android:orientation="vertical"
     android:padding="10dp">
-   <Button
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:background="@color/design_default_color_surface"
-       android:text="Hello Word"/>
+   <ImageView
+       android:layout_width="360dp"
+       android:layout_height="360dp"
+       android:src="@drawable/ic_mobile_config"
+       android:layout_gravity="center_horizontal"
+       app:tint="@color/purple_200"
+       />
 </LinearLayout>
 
