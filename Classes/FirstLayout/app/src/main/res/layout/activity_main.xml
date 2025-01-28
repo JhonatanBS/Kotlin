@@ -7,13 +7,37 @@
     android:background="@color/gray_700"
     android:orientation="vertical"
     android:padding="10dp">
-    <View
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="250dp" android:background="@color/white"
-        android:layout_marginBottom="20dp"/>
-    <View
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:inputType="text"
+        android:hint="Nome"
+        android:layout_marginBottom="5dp"
+        />
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@color/design_default_color_secondary" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:inputType="number"
+        android:hint="Phone"
+        android:layout_marginBottom="5dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:layout_marginBottom="5dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:inputType="date"
+        android:hint="Date"
+        android:layout_marginBottom="5dp"
+        />
 </LinearLayout>
 
