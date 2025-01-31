@@ -96,14 +96,16 @@
             android:textSize="32sp" />
 
         <Button
+            android:id="@+id/button_calculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/green_1"
             android:padding="16dp"
-            android:text="@string/calculate"
+            android:text="@string/button_calculate"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
     </LinearLayout>
 
 
