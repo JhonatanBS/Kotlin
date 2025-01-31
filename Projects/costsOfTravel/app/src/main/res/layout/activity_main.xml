@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:background="@color/purple_project"
         android:padding="16dp"
-        android:text="@string/Custo_de_Viagem"
+        android:text="@string/cost_of_travel"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -28,9 +28,10 @@
         android:padding="16dp">
 
         <EditText
+            android:id="@+id/distance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/distancia"
+            android:hint="@string/distance"
             android:textColorHint="@color/gray_1" />
 
         <TextView
@@ -38,13 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="24dp"
-            android:text="@string/total_de_quilometros"
+            android:text="@string/total_km"
             android:textColor="@color/gray_2" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/preco"
+            android:hint="@string/price"
             android:textColorHint="@color/gray_1" />
 
         <TextView
@@ -52,13 +53,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="24dp"
-            android:text="@string/preco_por_litro"
+            android:text="@string/price_for_liter"
             android:textColor="@color/gray_2" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/autonomia"
+            android:hint="@string/autonomy"
             android:textColorHint="@color/gray_1" />
 
         <TextView
@@ -66,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="24dp"
-            android:text="@string/kms_por_litro"
+            android:text="@string/kms_for_liter"
             android:textColor="@color/gray_2" />
 
         <TextView
@@ -74,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="@string/seu_gasto_total_ser_de"
+            android:text="@string/your_cost_total"
             android:textAllCaps="true"
             android:textSize="14sp" />
 
@@ -84,7 +85,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/rs_0"
+            android:text="@string/value_total"
             android:textAllCaps="true"
             android:textSize="32sp" />
 
@@ -93,7 +94,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/green_1"
             android:padding="16dp"
-            android:text="@string/calcular"
+            android:text="@string/calculate"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="20sp" />
