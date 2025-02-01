@@ -34,17 +34,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun isValid() : Boolean {
+        return (binding.distance.text.toString() != ""
+                && binding.price.text.toString() != ""
+                && binding.autonomy.text.toString() != ""
+                && binding.autonomy.text.toString().toFloat() != 0f)
+    }
+    
     private fun calculate() {
-        var distance = binding.distance.text.toString().toFloat()
-        var price = binding.price.text.toString().toFloat()
-        var autonomy = binding.autonomy.text.toString().toFloat()
+        if(isValid()) {
+            var distance = binding.distance.text.toString().toFloat()
+            var price = binding.price.text.toString().toFloat()
+            var autonomy = binding.autonomy.text.toString().toFloat()
 
-        //var totalValue = ( distance * price) / autonomy
-        var totalValue = (distance / autonomy) * price
+            var totalValue = (distance / autonomy) * price
 
-        binding.valueTotal.text = "R$${" %.2f".format(totalValue)}"
+            binding.valueTotal.text = "R$${" %.2f".format(totalValue)}"
+        }else {
+            Toast.makeText(this, R.string.validation_fill_input, Toast.LENGTH_SHORT).show()
+        }
 
-        // Toast.makeText(this, totalValueSt, Toast.LENGTH_SHORT).show()
+
+
+
+
     }
 
 
