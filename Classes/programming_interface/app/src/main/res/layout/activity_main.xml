@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#272221"
+    android:paddingHorizontal="38dp"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:paddingHorizontal="15dp"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
+            android:hint="Email"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="30dp"
+            android:paddingHorizontal="15dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:autofillHints="password"
+            android:background="@color/white"
+            />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="155dp"
+                android:layout_height="45dp"
+                android:background="#4B2995"
+                android:textColor="@color/white"
+                android:text="Login"
+                android:layout_marginEnd="18dp"
+                />
+
+            <Button
+                android:layout_width="155dp"
+                android:layout_height="45dp"
+                android:background="#4B2995"
+                android:textColor="@color/white"
+                android:text="Register"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
