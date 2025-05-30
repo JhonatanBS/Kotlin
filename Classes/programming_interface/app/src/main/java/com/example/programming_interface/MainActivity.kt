@@ -22,7 +22,6 @@ class MainActivity : ComponentActivity(), View.OnClickListener {
 
         binding.buttonLogin.setOnClickListener(this)
         binding.buttonRegister.setOnClickListener(this)
-
         }
 
     override fun onClick(v: View) {
@@ -31,10 +30,13 @@ class MainActivity : ComponentActivity(), View.OnClickListener {
             val password = binding.editTextPassword.text.toString()
 
             if(email.isNotEmpty() && password.isNotEmpty()) {
-                val intent = Intent(this, HomeActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("EMAIL", email)
 
-                startActivity(intent)
-                finish()
+                val intentNavigation = Intent(this, HomeActivity::class.java)
+                intent.putExtras(bundle)
+                startActivity(intentNavigation)
+
             } else {
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
             }
