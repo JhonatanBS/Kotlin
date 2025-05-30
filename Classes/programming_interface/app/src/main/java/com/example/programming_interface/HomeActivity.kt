@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.programming_interface.databinding.ActivityHomeBinding
+import com.example.programming_interface.utils.AppConstants
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -22,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         intent.extras?.let {
-            binding.textViewEmail.text = it.getString("EMAIL")
+            binding.textViewEmail.text = it.getString(AppConstants.EMAIL_KEY)
         }
     }
 }

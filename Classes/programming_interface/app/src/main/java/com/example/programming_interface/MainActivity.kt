@@ -6,11 +6,16 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.programming_interface.business.UserBusiness
 
 import com.example.programming_interface.databinding.ActivityMainBinding
+import com.example.programming_interface.utils.AppConstants
 
 class MainActivity : ComponentActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
+    private val userBusiness = UserBusiness()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +24,11 @@ class MainActivity : ComponentActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         binding.buttonLogin.setOnClickListener(this)
         binding.buttonRegister.setOnClickListener(this)
@@ -29,9 +39,9 @@ class MainActivity : ComponentActivity(), View.OnClickListener {
             val email = binding.edittextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
 
-            if(email.isNotEmpty() && password.isNotEmpty()) {
+            if(userBusiness.checkCredentials(email, password)) {
                 val bundle = Bundle()
-                bundle.putString("EMAIL", email)
+                bundle.putString(AppConstants.EMAIL_KEY, email)
 
                 val intentNavigation = Intent(this, HomeActivity::class.java)
                 intent.putExtras(bundle)
