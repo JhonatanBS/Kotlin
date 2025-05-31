@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/text_showMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/show_me"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_title_teach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_showMe"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/title_teach"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/view_center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/image_development"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_below="@id/text_title_teach"
+        android:contentDescription="@string/developer"
+        android:src="@drawable/image_development"
+        android:layout_alignEnd="@id/view_center"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_below="@id/text_title_teach"
+        android:contentDescription="@string/developer"
+        android:src="@drawable/image_design"
+        android:layout_alignStart="@id/view_center"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/image_development"
+        android:contentDescription="@string/developer"
+        android:src="@drawable/image_explore"
+        android:layout_alignStart="@id/view_center"
+        />
+
+    <ImageView
+        android:id="@+id/image_ia"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/image_development"
+        android:contentDescription="@string/developer"
+        android:src="@drawable/image_ai"
+        android:layout_alignEnd="@id/view_center"
+        />
+
+    <TextView
+        android:id="@+id/text_courses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_ia"
+        android:layout_alignEnd="@id/view_center"
+        android:text="@string/courses"
+        android:fontFamily="@font/open_sans"
+        android:textSize="14sp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_ia"
+        android:layout_alignStart="@id/view_center"
+        android:text="@string/all_look"
+        android:textAlignment="textEnd"
+        android:fontFamily="@font/open_sans_bold"
+        android:textSize="14sp"
+        />
+
+    <View
+        android:id="@+id/view_gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:background="@drawable/image_background"
+        android:layout_below="@id/text_courses"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_bold"
+        android:textSize="16sp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="28dp"
+        android:layout_alignTop="@id/view_gradient"
+        android:layout_alignBottom="@id/view_gradient"
+        android:text="@string/development_android"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/android"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_alignBottom="@id/view_gradient"
+        android:layout_alignEnd="@id/view_gradient"
+        android:layout_alignTop="@id/view_gradient"
+        />
+</RelativeLayout>
