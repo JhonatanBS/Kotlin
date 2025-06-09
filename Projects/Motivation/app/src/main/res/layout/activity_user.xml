@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/purple_user"
     android:paddingHorizontal="16dp"
-    tools:context=".UserActivity">
+    tools:context=".ui.UserActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,10 +21,12 @@
         />
 
     <EditText
+        android:id="@+id/edittext_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:hint="Qual seu nome?"
+        android:textColor="@color/white"
         android:backgroundTint="@color/purple_dark"
         android:padding="15dp"
         android:textColorHint="@color/white"
