@@ -1,31 +1,28 @@
 package com.example.motivation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.motivation.databinding.ActivityMainBinding
+import com.example.motivation.databinding.ActivityUserBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var binding: ActivityMainBinding
+class UserActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var binding: ActivityUserBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityMainBinding.inflate((layoutInflater))
+        binding = ActivityUserBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
@@ -33,17 +30,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if(v.id == R.id.button_newPhrase) {
-            handleNewPhrase()
+        handleSave()
+        
+        if(v.id == R.id.button_save) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    private fun handleNewPhrase() {
-        TODO("Not yet implemented")
+    private fun handleSave() {
+
     }
 
     private fun setListeners() {
-        binding.buttonNewPhrase.setOnClickListener(this)
+        binding.buttonSave.setOnClickListener(this)
     }
-
 }

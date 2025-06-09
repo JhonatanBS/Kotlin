@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_user"
+    android:paddingHorizontal="16dp"
+    tools:context=".UserActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Vamos começar?"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="Qual seu nome?"
+        android:backgroundTint="@color/purple_dark"
+        android:padding="15dp"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="salvar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/purple_dark"
+        app:cornerRadius="5dp"
+        android:paddingHorizontal="30dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
