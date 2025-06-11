@@ -25,10 +25,10 @@
     <td><a href="">NONE</a></td>
   </tr>
   <tr>
-    <td><a href="" target="_blank">Pizzaria</a></td>
-    <td>Manage of pizzaria store</td>
-    <td>CHALLENGE</td>
-    <td><a href=""></a></td>
+    <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/Motivation" target="_blank">Motivation</a></td>
+    <td>Generator of phrase</td>
+    <td>CLASS</td>
+    <td><a href="">NONE</a></td>
   </tr>
 </table>
 
