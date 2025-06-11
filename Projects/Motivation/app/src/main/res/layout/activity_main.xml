@@ -21,7 +21,7 @@
         android:id="@+id/image_all"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        app:tint="@color/white"
+        app:tint="@color/purple_dark"
         android:contentDescription="image infinity"
         android:src="@drawable/ic_all"
         android:layout_alignTop="@id/view_menuBar"
@@ -30,6 +30,7 @@
         />
 
     <ImageView
+        android:id="@+id/image_happy"
         android:layout_width="36dp"
         android:layout_height="36dp"
         app:tint="@color/purple_dark"
@@ -41,6 +42,7 @@
         />
 
     <ImageView
+        android:id="@+id/image_sunny"
         android:layout_width="36dp"
         android:layout_height="36dp"
         app:tint="@color/purple_dark"
