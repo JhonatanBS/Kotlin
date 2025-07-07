@@ -12,32 +12,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.3" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/text_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-
         app:layout_constraintStart_toStartOf="@id/text_first"
-        app:layout_constraintTop_toBottomOf="@+id/text_first"
-        />
-
-    <TextView
-        android:id="@+id/text_third"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBaseline_toBaselineOf="@id/text_first"
-        app:layout_constraintStart_toEndOf="@id/text_first"
-        />
-
-
+        app:layout_constraintTop_toTopOf="@id/text_first"
+        app:layout_constraintCircle="@id/text_first"
+        app:layout_constraintCircleAngle="30"
+        app:layout_constraintCircleRadius="100dp"
+        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
