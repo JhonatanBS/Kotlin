@@ -8,5 +8,7 @@ class BookViewHolder(private val item: ItemBookBinding) : RecyclerView.ViewHolde
 
     fun bind(book: BookEntity) {
         item.textviewTitle.text = book.title
+        item.textviewAuthor.text = book.author
+        item.textviewGenre.text = book.genre
     }
 }
