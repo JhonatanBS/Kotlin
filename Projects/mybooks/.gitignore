@@ -6,9 +6,6 @@
 /app/build/
 /app/src/test/
 /app/src/androidTest/
-!/app/src/main/res/
-/app/src/main/res/*
-!/app/src/main/res/layout
 /app/src/main/*.xml
 
 # Files
