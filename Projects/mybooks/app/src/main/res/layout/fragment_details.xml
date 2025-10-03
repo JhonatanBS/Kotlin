@@ -44,7 +44,7 @@
         />
 
     <TextView
-        android:id="@+id/textview_value"
+        android:id="@+id/textview_author_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/textview_author"
@@ -58,7 +58,7 @@
         android:id="@+id/textview_genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textview_value"
+        app:layout_constraintTop_toBottomOf="@id/textview_author_value"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="32dp"
         android:textSize="22sp"
