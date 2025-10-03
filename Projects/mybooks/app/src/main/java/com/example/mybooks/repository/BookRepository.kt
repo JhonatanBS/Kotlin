@@ -50,7 +50,7 @@ class BookRepository {
         return books.removeIf { it.id == id }
     }
 
-    fun toggleFavorite(id: Int) {
+    fun toggleFavoriteStatus(id: Int) {
         val book = books.find { it.id == id }
         if(book != null) {
             book.favorite = !book.favorite
