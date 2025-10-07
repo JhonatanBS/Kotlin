@@ -56,12 +56,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun attachListener() {
-        adapter.attachListener(object: BookListener {
+        adapter.attachListener(object : BookListener {
             override fun onClick(id: Int) {
                 val bundle = Bundle()
                 bundle.putInt(BookConstants.KEY.BOOK_ID, id)
 
                 findNavController().navigate(R.id.navigation_details, bundle)
+            }
+
+            override fun onFavoriteClick(id: Int) {
+                viewModel.favorite(id)
+                viewModel.getAllBooks()
             }
 
         })
