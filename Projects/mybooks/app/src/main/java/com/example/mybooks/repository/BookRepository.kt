@@ -1,8 +1,11 @@
 package com.example.mybooks.repository
 
+import android.content.Context
 import com.example.mybooks.entity.BookEntity
 
-class BookRepository private  constructor() {
+class BookRepository private  constructor(context: Context) {
+
+    private val database = BookDatabaseHelper(context)
     private val books = mutableListOf<BookEntity>()
 
     init {
@@ -12,10 +15,10 @@ class BookRepository private  constructor() {
     companion object {
         private lateinit var instance: BookRepository
 
-        fun getInstance(): BookRepository {
+        fun getInstance(context: Context): BookRepository {
             synchronized(this) {
                 if(!::instance.isInitialized) {
-                    instance = BookRepository()
+                    instance = BookRepository(context)
                 }
             }
             return instance
