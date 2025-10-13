@@ -1,7 +1,5 @@
 # Folders
 
-/gradle
-/.gradle
 /.idea
 /app/build/
 /app/src/test/

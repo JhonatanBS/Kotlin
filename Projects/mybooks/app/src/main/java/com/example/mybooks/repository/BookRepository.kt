@@ -8,7 +8,7 @@ import com.example.mybooks.helper.DatabaseConstants
 class BookRepository private constructor(context: Context) {
 
     private val database = BookDatabaseHelper(context)
-    
+
     companion object {
         private lateinit var instance: BookRepository
 
@@ -56,13 +56,15 @@ class BookRepository private constructor(context: Context) {
         val db = database.readableDatabase
         val books = mutableListOf<BookEntity>()
 
-        val cursor = db.query(DatabaseConstants.BOOK.TABLE_NAME,
+        val cursor = db.query(
+            DatabaseConstants.BOOK.TABLE_NAME,
             null,
             "${DatabaseConstants.BOOK.COLUMNS.FAVORITE} = ?",
             arrayOf("1"),
             null,
             null,
-            null)
+            null
+        )
 
         if (cursor.moveToFirst()) {
             do {
@@ -90,30 +92,32 @@ class BookRepository private constructor(context: Context) {
     fun getBookId(id: Int): BookEntity? {
         val db = database.readableDatabase
 
-        val cursor = db.query(DatabaseConstants.BOOK.TABLE_NAME,
+        val cursor = db.query(
+            DatabaseConstants.BOOK.TABLE_NAME,
             null,
             "${DatabaseConstants.BOOK.COLUMNS.ID} = ?",
             arrayOf(id.toString()),
             null,
             null,
-            null)
+            null
+        )
 
         var book: BookEntity? = null
 
         if (cursor.moveToFirst()) {
 
-                val id =
-                    cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.ID))
-                val title =
-                    cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.TITLE))
-                val author =
-                    cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.AUTHOR))
-                val genre =
-                    cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.GENRE))
-                val favorite: Boolean =
-                    cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.FAVORITE)) == 1
+            val id =
+                cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.ID))
+            val title =
+                cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.TITLE))
+            val author =
+                cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.AUTHOR))
+            val genre =
+                cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.GENRE))
+            val favorite: Boolean =
+                cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BOOK.COLUMNS.FAVORITE)) == 1
 
-                book = (BookEntity(id, title, author, favorite, genre))
+            book = (BookEntity(id, title, author, favorite, genre))
         }
 
         cursor.close()
