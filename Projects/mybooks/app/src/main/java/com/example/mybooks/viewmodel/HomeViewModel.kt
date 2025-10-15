@@ -13,6 +13,12 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val _books = MutableLiveData<List<BookEntity>>()
     val books: LiveData<List<BookEntity>> = _books
 
+    init {
+        if(repository.getAllBooks().isEmpty()) {
+            repository.loadInitialData()
+        }
+    }
+
     fun getAllBooks() {
         _books.value = repository.getAllBooks()
     }
