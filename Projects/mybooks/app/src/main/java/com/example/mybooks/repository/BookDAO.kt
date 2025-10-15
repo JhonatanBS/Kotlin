@@ -17,13 +17,13 @@ interface BookDAO {
     fun getFavoriteBooks(): List<BookEntity>
 
     @Query("SELECT * FROM Book WHERE id = :id")
-    fun getFavoriteBooks(id: Int) : List<BookEntity>
+    fun getBookById(id: Int) : BookEntity
 
     @Update
     fun update(book: BookEntity)
 
     @Delete
-    fun delete(book: BookEntity)
+    fun delete(book: BookEntity): Int
 
     @Insert
     fun insert(book: BookEntity)

@@ -1,6 +1,6 @@
 package com.example.mybooks.repository
 
-import android.content.ContentValues
+/*import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -77,4 +77,4 @@ class BookDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
             BookEntity(20, "Os Miseráveis", "Victor Hugo", false, "Romance")
         )
     }
-}
+}*/
