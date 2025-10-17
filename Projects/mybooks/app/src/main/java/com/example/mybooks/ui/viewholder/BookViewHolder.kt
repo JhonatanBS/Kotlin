@@ -1,6 +1,5 @@
 package com.example.mybooks.ui.viewholder
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mybooks.R
 import com.example.mybooks.databinding.ItemBookBinding

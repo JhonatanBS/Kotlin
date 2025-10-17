@@ -30,15 +30,15 @@ class BookRepository private constructor(context: Context) {
         return database.getFavoriteBooks()
     }
 
-    fun getBookId(id: Int): BookEntity {
+    suspend fun getBookId(id: Int): BookEntity {
         return database.getBookById(id)
     }
 
-    fun deleteBook(id: Int): Boolean {
+    suspend fun deleteBook(id: Int): Boolean {
         return database.delete(getBookId(id)) > 0
     }
 
-    fun toggleFavoriteStatus(id: Int) {
+    suspend fun toggleFavoriteStatus(id: Int) {
         val book = getBookId(id)
         book.favorite = !book.favorite
         database.update(book)
