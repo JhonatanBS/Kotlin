@@ -43,11 +43,6 @@ class FavoriteFragment : Fragment() {
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        viewModel.getFavoriteBooks()
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -64,7 +59,6 @@ class FavoriteFragment : Fragment() {
 
             override fun onFavoriteClick(id: Int) {
                 viewModel.favorite(id)
-                viewModel.getFavoriteBooks()
             }
 
         })

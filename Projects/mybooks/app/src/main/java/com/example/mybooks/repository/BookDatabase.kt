@@ -27,7 +27,7 @@ abstract class BookDatabase : RoomDatabase() {
                         Room.databaseBuilder(context, BookDatabase::class.java, DATABASE_NAME)
                             .addMigrations(Migrations.migrationFromV1ToV2)
                             .addCallback(DatabaseCallback(context))
-                            .allowMainThreadQueries()
+                            //.allowMainThreadQueries()
                             .build()
                 }
             }

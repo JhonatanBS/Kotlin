@@ -2,6 +2,7 @@ package com.example.mybooks.repository
 
 import android.content.Context
 import com.example.mybooks.entity.BookEntity
+import kotlinx.coroutines.flow.Flow
 
 class BookRepository private constructor(context: Context) {
 
@@ -21,15 +22,11 @@ class BookRepository private constructor(context: Context) {
 
     }
 
-    fun loadInitialData() {
-
-    }
-
-    fun getAllBooks(): List<BookEntity> {
+    fun getAllBooks(): Flow<List<BookEntity>> {
         return database.getAllBooks()
     }
 
-    fun getFavoriteBooks(): List<BookEntity> {
+    fun getFavoriteBooks(): Flow<List<BookEntity>> {
         return database.getFavoriteBooks()
     }
 
