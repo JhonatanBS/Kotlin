@@ -10,14 +10,14 @@ interface PersonService {
 
     @POST("Authentication/Login")
     @FormUrlEncoded // Agrupa os dados na api
-    fun login(
+    suspend fun login(
         @Field("email") email: String,
         @Field("password") password: String
     ): Response<PersonModel>
 
     @POST("Authentication/Create")
     @FormUrlEncoded // Agrupa os dados na api
-    fun create(
+    suspend fun create(
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String,

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.core.view.ViewCompat
@@ -50,8 +51,19 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun observe() {
+        viewModel.login.observe(this) {
+            if(it) {
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+            } else {
+                Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun handleLogin() {
+        val email = binding.editEmail.text.toString()
+        val password = binding.editPassword.text.toString()
+
+        viewModel.login(email, password)
     }
 }
