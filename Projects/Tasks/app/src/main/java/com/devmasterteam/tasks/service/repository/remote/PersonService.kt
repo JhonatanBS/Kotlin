@@ -21,6 +21,6 @@ interface PersonService {
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String,
-        @Field("receivenews") receivenews: String
+        @Field("receivenews") receiveNews: String
     ): Response<PersonModel>
 }
