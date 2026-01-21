@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         navView.setNavigationItemSelectedListener {
+            viewModel.logout()
             if (it.itemId == R.id.nav_logout) {
                 startActivity(Intent(applicationContext, LoginActivity::class.java))
                 finish()
