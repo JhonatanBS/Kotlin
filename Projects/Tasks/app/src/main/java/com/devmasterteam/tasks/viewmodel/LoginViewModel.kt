@@ -13,15 +13,19 @@ import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
 class LoginViewModel(application: Application) : BaseAndroidViewModel(application) {
+    private val preferencesManager = PreferencesManager(application.applicationContext)
     private val personRepository = PersonRepository()
 
     private val _login = MutableLiveData<ValidationModel>()
     val login: LiveData<ValidationModel> = _login
 
+    private val _loggedUser = MutableLiveData<Boolean>()
+    val loggedUser: LiveData<Boolean> = _loggedUser
+
     fun login(email: String, password: String) {
         viewModelScope.launch {
             val response = personRepository.login(email, password)
-            if(response.isSuccessful && response.body() != null) {
+            if (response.isSuccessful && response.body() != null) {
                 super.saveUserAuthentication(response.body()!!)
                 _login.value = ValidationModel()
             } else {
@@ -29,5 +33,14 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
             }
         }
 
+    }
+
+    fun verifyUserLogged() {
+        viewModelScope.launch {
+            val token = preferencesManager.get(TaskConstants.SHARED.TOKEN_KEY)
+            val personKey = preferencesManager.get(TaskConstants.SHARED.PERSON_KEY)
+
+            _loggedUser.value = (token != "" && personKey != "")
+        }
     }
 }
