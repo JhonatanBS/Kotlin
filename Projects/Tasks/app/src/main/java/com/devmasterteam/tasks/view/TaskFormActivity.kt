@@ -91,9 +91,14 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
     }
 
     private fun handleSave() {
-        //val task = TaskModel()
 
+        val description = binding.editDescription.text.toString()
         val priorityId = listPriority[binding.spinnerPriority.selectedItemPosition].id
+        val completed = binding.checkComplete.isChecked
+        val dueDate = binding.buttonDate.text.toString()
+
+        val task = TaskModel(0, priorityId, description, dueDate, completed)
+        viewModel.save(task)
     }
 
     private fun handleDate() {

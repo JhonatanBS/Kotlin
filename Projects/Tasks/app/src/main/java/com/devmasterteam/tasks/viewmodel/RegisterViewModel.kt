@@ -9,6 +9,7 @@ import com.devmasterteam.tasks.service.constants.TaskConstants
 import com.devmasterteam.tasks.service.model.ValidationModel
 import com.devmasterteam.tasks.service.repository.PersonRepository
 import com.devmasterteam.tasks.service.repository.local.PreferencesManager
+import com.devmasterteam.tasks.service.repository.remote.RetrofitClient
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
@@ -24,9 +25,13 @@ class RegisterViewModel(application: Application) : BaseAndroidViewModel(applica
         password: String
     ) {
         viewModelScope.launch {
-            val response = personRepository.create(name,email, password,    "TRUE")
-            if(response.isSuccessful && response.body() != null) {
-                super.saveUserAuthentication(response.body()!!)
+            val response = personRepository.create(name, email, password, "TRUE")
+            if (response.isSuccessful && response.body() != null) {
+                val personModel = response.body()!!
+
+                RetrofitClient.addHeaders(personModel.token, personModel.personKey)
+
+                super.saveUserAuthentication(personModel)
                 _createUser.value = ValidationModel()
             } else {
                 _createUser.value = errorMessage(response)

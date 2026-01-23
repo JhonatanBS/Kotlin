@@ -9,6 +9,7 @@ import com.devmasterteam.tasks.service.model.ValidationModel
 import com.devmasterteam.tasks.service.repository.PersonRepository
 import com.devmasterteam.tasks.service.repository.PriorityRepository
 import com.devmasterteam.tasks.service.repository.local.PreferencesManager
+import com.devmasterteam.tasks.service.repository.remote.RetrofitClient
 import kotlinx.coroutines.launch
 
 class LoginViewModel(application: Application) : BaseAndroidViewModel(application) {
@@ -26,7 +27,11 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
         viewModelScope.launch {
             val response = personRepository.login(email, password)
             if (response.isSuccessful && response.body() != null) {
-                super.saveUserAuthentication(response.body()!!)
+                val personModel = response.body()!!
+
+                RetrofitClient.addHeaders(personModel.token, personModel.personKey)
+
+                super.saveUserAuthentication(personModel)
                 _login.value = ValidationModel()
             } else {
                 _login.value = errorMessage(response)
@@ -38,6 +43,8 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
         viewModelScope.launch {
             val token = preferencesManager.get(TaskConstants.SHARED.TOKEN_KEY)
             val personKey = preferencesManager.get(TaskConstants.SHARED.PERSON_KEY)
+
+            RetrofitClient.addHeaders(token, personKey)
 
             val logged = (token != "" && personKey != "")
 
