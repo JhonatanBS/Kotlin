@@ -10,10 +10,3 @@ data class PriorityModel (
     @SerializedName("Description")
     val description: String
 )
-
-/*
-*  {
-        "Id": 1,
-        "Description": "Baixa"
-    },
-* */
