@@ -17,7 +17,7 @@ interface TaskService {
     suspend fun list(): Response<List<TaskModel>>
 
     @GET("Task/Next7Days")
-    suspend fun list7Days(): Response<List<TaskModel>>
+    suspend fun listNext(): Response<List<TaskModel>>
 
     @GET("Task/Overdue")
     suspend fun listOverdue(): Response<List<TaskModel>>
