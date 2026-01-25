@@ -40,11 +40,11 @@ class AllTasksFragment : Fragment() {
             }
 
             override fun onCompleteClick(id: Int) {
-                TODO("Not yet implemented")
+                viewModel.status(id, true)
             }
 
             override fun onUndoClick(id: Int) {
-                TODO("Not yet implemented")
+                viewModel.status(id, false)
             }
         }
 
