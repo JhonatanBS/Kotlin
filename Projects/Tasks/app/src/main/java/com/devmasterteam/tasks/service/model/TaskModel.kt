@@ -17,4 +17,6 @@ data class TaskModel (
 
     @SerializedName("Complete")
     val complete: Boolean,
+
+    var priorityDescription: String = ""
 )
