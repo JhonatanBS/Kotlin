@@ -38,10 +38,15 @@
     <td>CLASS</td>
     <td><a href="">NONE</a></td>
   </tr>
+
+  <tr>
+    <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/Tasks" target="_blank">Tasks</a></td>
+    <td>Creating my tasks for done</td>
+    <td>CLASS</td>
+    <td><a href="">NONE</a></td>
+  </tr>
   
 </table>
-
-
 
 <hr>
 
