@@ -12,7 +12,7 @@ import com.devmasterteam.tasks.service.repository.TaskRepository
 import kotlinx.coroutines.launch
 
 class TaskListViewModel(application: Application) : AndroidViewModel(application) {
-    private val taskRepository = TaskRepository()
+    private val taskRepository = TaskRepository(application.applicationContext)
     private val priorityRepository = PriorityRepository(application.applicationContext)
 
     private var taskFilter = TaskConstants.FILTER.ALL

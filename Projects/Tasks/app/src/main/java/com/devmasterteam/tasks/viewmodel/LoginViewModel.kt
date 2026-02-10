@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.service.constants.TaskConstants
 import com.devmasterteam.tasks.service.exception.NoInternetException
 import com.devmasterteam.tasks.service.model.ValidationModel
@@ -38,8 +39,8 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
                 } else {
                     _login.value = errorMessage(response)
                 }
-            } catch (e: NoInternetException) {
-                _login.value = ValidationModel(e.errorMessage)
+            } catch (e: Exception) {
+                _login.value = handleException(e)
             }
         }
     }
@@ -55,7 +56,7 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
 
             _loggedUser.value = logged
 
-            if(!logged) {
+            if (!logged) {
                 val response = priorityRepository.getList()
                 if (response.isSuccessful && response.body() != null) {
                     priorityRepository.save(response.body()!!)

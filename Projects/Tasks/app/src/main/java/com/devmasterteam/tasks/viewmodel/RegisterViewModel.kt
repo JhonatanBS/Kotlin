@@ -25,16 +25,20 @@ class RegisterViewModel(application: Application) : BaseAndroidViewModel(applica
         password: String
     ) {
         viewModelScope.launch {
-            val response = personRepository.create(name, email, password, "TRUE")
-            if (response.isSuccessful && response.body() != null) {
-                val personModel = response.body()!!
+            try {
+                val response = personRepository.create(name, email, password, "TRUE")
+                if (response.isSuccessful && response.body() != null) {
+                    val personModel = response.body()!!
 
-                RetrofitClient.addHeaders(personModel.token, personModel.personKey)
+                    RetrofitClient.addHeaders(personModel.token, personModel.personKey)
 
-                super.saveUserAuthentication(personModel)
-                _createUser.value = ValidationModel()
-            } else {
-                _createUser.value = errorMessage(response)
+                    super.saveUserAuthentication(personModel)
+                    _createUser.value = ValidationModel()
+                } else {
+                    _createUser.value = errorMessage(response)
+                }
+            } catch (e: Exception) {
+                _createUser.value = handleException(e)
             }
         }
     }
