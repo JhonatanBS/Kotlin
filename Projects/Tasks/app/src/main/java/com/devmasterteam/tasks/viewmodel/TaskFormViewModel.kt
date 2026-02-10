@@ -27,7 +27,7 @@ class TaskFormViewModel(application: Application) : BaseAndroidViewModel(applica
                 if (response.isSuccessful && response.body() != null) {
                     _taskSaved.value = ValidationModel()
                 } else {
-                    _taskSaved.value = errorMessage(response)
+                    _taskSaved.value = parseErrorMessage(response)
                 }
             } catch (e: Exception) {
                 _taskSaved.value = handleException(e)

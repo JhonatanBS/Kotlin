@@ -1,12 +1,11 @@
 package com.devmasterteam.tasks.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.service.constants.TaskConstants
-import com.devmasterteam.tasks.service.exception.NoInternetException
 import com.devmasterteam.tasks.service.model.ValidationModel
 import com.devmasterteam.tasks.service.repository.PersonRepository
 import com.devmasterteam.tasks.service.repository.PriorityRepository
@@ -37,7 +36,7 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
                     super.saveUserAuthentication(personModel)
                     _login.value = ValidationModel()
                 } else {
-                    _login.value = errorMessage(response)
+                    _login.value = parseErrorMessage(response)
                 }
             } catch (e: Exception) {
                 _login.value = handleException(e)
@@ -57,9 +56,13 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
             _loggedUser.value = logged
 
             if (!logged) {
-                val response = priorityRepository.getList()
-                if (response.isSuccessful && response.body() != null) {
-                    priorityRepository.save(response.body()!!)
+                try {
+                    val response = priorityRepository.getList()
+                    if (response.isSuccessful && response.body() != null) {
+                        priorityRepository.save(response.body()!!)
+                    }
+                } catch (e: Exception) {
+                    Log.e("LoginViewModel", e.message.toString())
                 }
             }
         }

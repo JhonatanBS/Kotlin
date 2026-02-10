@@ -28,6 +28,10 @@ class TaskRepository(context: Context) : BaseRepository(context) {
         return safeApiCall { remote.undo(id) }
     }
 
+    suspend fun delete(id: Int): Response<Boolean> {
+        return safeApiCall { remote.delete(id) }
+    }
+
     suspend fun list(): Response<List<TaskModel>> {
         return safeApiCall { remote.list() }
     }

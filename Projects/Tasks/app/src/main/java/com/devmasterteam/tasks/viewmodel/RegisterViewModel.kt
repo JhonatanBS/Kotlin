@@ -1,16 +1,12 @@
 package com.devmasterteam.tasks.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.devmasterteam.tasks.service.constants.TaskConstants
 import com.devmasterteam.tasks.service.model.ValidationModel
 import com.devmasterteam.tasks.service.repository.PersonRepository
-import com.devmasterteam.tasks.service.repository.local.PreferencesManager
 import com.devmasterteam.tasks.service.repository.remote.RetrofitClient
-import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
 class RegisterViewModel(application: Application) : BaseAndroidViewModel(application) {
@@ -35,7 +31,7 @@ class RegisterViewModel(application: Application) : BaseAndroidViewModel(applica
                     super.saveUserAuthentication(personModel)
                     _createUser.value = ValidationModel()
                 } else {
-                    _createUser.value = errorMessage(response)
+                    _createUser.value = parseErrorMessage(response)
                 }
             } catch (e: Exception) {
                 _createUser.value = handleException(e)

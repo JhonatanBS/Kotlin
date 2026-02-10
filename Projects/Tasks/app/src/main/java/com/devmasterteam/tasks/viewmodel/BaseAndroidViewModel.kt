@@ -20,7 +20,7 @@ open class BaseAndroidViewModel(private val application: Application) : AndroidV
         preferencesManager.store(TaskConstants.SHARED.PERSON_NAME, personModel.name)
     }
 
-    fun <T> errorMessage(response: Response<T>): ValidationModel {
+    fun <T> parseErrorMessage(response: Response<T>): ValidationModel {
         return ValidationModel(
             Gson().fromJson(
                 response.errorBody()?.string().toString(),
