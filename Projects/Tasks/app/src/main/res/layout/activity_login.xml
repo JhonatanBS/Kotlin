@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/shape_login_background"
     android:padding="16dp"
     tools:context=".view.LoginActivity">
 
@@ -21,9 +22,11 @@
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="0dp"
+        style="@style/WhiteEditText"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:autofillHints="emailAddress"
+        android:drawableStart="@drawable/ic_mail"
         android:drawablePadding="8dp"
         android:drawableTint="@color/white"
         android:hint="@string/hint_email"
@@ -35,7 +38,9 @@
     <EditText
         android:id="@+id/edit_password"
         android:layout_width="0dp"
+        style="@style/WhiteEditText"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_lock"
         android:layout_marginTop="16dp"
         android:autofillHints="password"
         android:drawablePadding="8dp"
@@ -48,6 +53,7 @@
 
     <Button
         android:id="@+id/button_login"
+        style="@style/DefaultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -61,6 +67,7 @@
         android:id="@+id/text_new_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/msg_dont_have_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/text_register"
@@ -71,6 +78,7 @@
         android:id="@+id/text_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_marginStart="8dp"
         android:layout_toEndOf="@id/text_new_account"
         android:text="@string/button_new_register"
