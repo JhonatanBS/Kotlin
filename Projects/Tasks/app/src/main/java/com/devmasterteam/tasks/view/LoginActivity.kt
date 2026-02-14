@@ -8,10 +8,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.databinding.ActivityLoginBinding
 import com.devmasterteam.tasks.viewmodel.LoginViewModel
+import java.util.concurrent.Executor
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -34,7 +37,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             insets
         }
 
-        viewModel.verifyUserLogged()
+        viewModel.verifyAuthentication()
 
         // Eventos
         binding.buttonLogin.setOnClickListener(this)
@@ -54,7 +57,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun observe() {
         viewModel.login.observe(this) {
-            if(it.status()) {
+            if (it.status()) {
                 startActivity(Intent(applicationContext, MainActivity::class.java))
             } else {
                 Toast.makeText(applicationContext, it.message(), Toast.LENGTH_SHORT).show()
@@ -63,10 +66,48 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         viewModel.loggedUser.observe(this) {
             if (it) {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
+                showAuthentication()
             }
         }
     }
+
+    private fun showAuthentication() {
+        val executor: Executor = ContextCompat.getMainExecutor(this)
+
+        // BiometricPrompt
+        val biometricPrompt = BiometricPrompt(
+            this, executor,
+            object : BiometricPrompt.AuthenticationCallback() {
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    // Lógica de acordo com a aplicação
+                    super.onAuthenticationSucceeded(result)
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                    finish()
+                }
+
+                override fun onAuthenticationFailed() {
+                    // Lógica de acordo com a aplicação
+                    super.onAuthenticationFailed()
+                }
+
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    // Lógica de acordo com a aplicação
+                    super.onAuthenticationError(errorCode, errString)
+                }
+            })
+
+        // Informações apresentadas no momento da autenticação
+        val info: BiometricPrompt.PromptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Titulo")
+            .setSubtitle("Subtítulo")
+            .setDescription("Descrição")
+            .setNegativeButtonText("Cancelar")
+            .build()
+
+        // Exibe para o usuário
+        biometricPrompt.authenticate(info)
+    }
+
 
     private fun handleLogin() {
         val email = binding.editEmail.text.toString()
