@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
     override fun onClick(v: View) {
         when (v.id) {
             R.id.button_toast -> {
+                binding.progressbar.incrementProgressBy(5)
                 val toast = Toast.makeText(this, "Toast", Toast.LENGTH_SHORT)
                 // toast.setGravity(Gravity.TOP, 50, 50)
                 toast.show()
