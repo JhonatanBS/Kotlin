@@ -1,0 +1,22 @@
+# Folders
+
+/gradle
+/.gradle
+/.idea
+/app/build/
+/app/src/test/
+/app/src/androidTest/
+!/app/src/main/res/
+/app/src/main/res/*
+!/app/src/main/res/layout
+/app/src/main/*.xml
+
+# Files
+
+*.kts
+*.properties
+*.bat
+gradlew
+/app/*.kts
+/app/*.pro
+/app/*.gitignore
