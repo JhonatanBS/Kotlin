@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.CompoundButton
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ import com.example.components.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnItemSelectedListener,
-    SeekBar.OnSeekBarChangeListener {
+    SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +31,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
         binding.seekbar.setOnSeekBarChangeListener(this)
 
         binding.seekbar.progress = 27
-        
+
+        binding.switchOnOff.setOnCheckedChangeListener(this)
+
     }
 
     override fun onClick(v: View) {
@@ -72,6 +75,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
                 binding.spinnerDinamico.adapter = null
             }
         }
+    }
+
+    override fun onCheckedChanged(
+        buttonView: CompoundButton,
+        isChecked: Boolean
+    ) {
+        val str = "$isChecked"
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
     }
 
     override fun onProgressChanged(
