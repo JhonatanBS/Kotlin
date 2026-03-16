@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
         binding.seekbar.progress = 27
 
         binding.switchOnOff.setOnCheckedChangeListener(this)
+        binding.checkboxOnOff.setOnCheckedChangeListener(this)
 
     }
 
@@ -81,8 +82,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
         buttonView: CompoundButton,
         isChecked: Boolean
     ) {
-        val str = "$isChecked"
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+        when (buttonView.id) {
+            R.id.switch_on_off -> {
+                val str = "Switch: $isChecked"
+                Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.checkbox_on_off -> {
+                val str = "Checkbox: $isChecked"
+                Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onProgressChanged(

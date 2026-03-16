@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/linear_root"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".MainActivity">
@@ -14,29 +14,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Toast me!"
-        />
+        android:text="Toast me!" />
 
     <Button
         android:id="@+id/button_snack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Snack me!"
-        />
+        android:text="Snack me!" />
 
     <Spinner
         android:id="@+id/spinner_estatico"
-        android:entries="@array/weight_array"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:entries="@array/weight_array" />
 
     <Spinner
         android:id="@+id/spinner_dinamico"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,8 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="Obter spinner"
-            />
+            android:text="Obter spinner" />
 
         <Button
             android:id="@+id/button_set_spinner"
@@ -58,8 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="Atribuir spinner"
-            />
+            android:text="Atribuir spinner" />
 
     </LinearLayout>
 
@@ -67,21 +61,24 @@
         android:id="@+id/seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="50"
-        />
+        android:max="50" />
 
     <TextView
         android:id="@+id/text_seekbar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
-<androidx.appcompat.widget.SwitchCompat
-    android:id="@+id/switch_on_off"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:text="Switch"
-    />
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_on_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Switch" />
+
+    <CheckBox
+        android:id="@+id/checkbox_on_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Checkbox" />
 
 </LinearLayout>
