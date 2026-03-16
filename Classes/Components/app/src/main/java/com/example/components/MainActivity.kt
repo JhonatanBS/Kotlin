@@ -1,14 +1,12 @@
 package com.example.components
 
+import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.components.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
@@ -20,6 +18,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.hide()
 
         binding.buttonToast.setOnClickListener(this)
+        binding.buttonSnack.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -28,6 +27,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val toast = Toast.makeText(this, "Toast", Toast.LENGTH_SHORT)
                 // toast.setGravity(Gravity.TOP, 50, 50)
                 toast.show()
+            }
+
+            R.id.button_snack -> {
+                val snack = Snackbar.make(binding.linearRoot, "Snack", Snackbar.LENGTH_SHORT)
+
+                snack.setTextColor(Color.WHITE)
+                snack.setBackgroundTint(Color.BLUE)
+
+                snack.setAction("Desfazer", View.OnClickListener {
+                    Snackbar.make(binding.linearRoot, "Desfeito!", Snackbar.LENGTH_SHORT).show()
+                })
+
+                snack.setActionTextColor(Color.BLACK)
+
+                snack.show()
             }
         }
     }
