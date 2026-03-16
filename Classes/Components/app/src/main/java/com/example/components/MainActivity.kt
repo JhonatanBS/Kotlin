@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.components.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnItemSelectedListener,
+    SeekBar.OnSeekBarChangeListener {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +27,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
         binding.buttonGetSpinner.setOnClickListener(this)
         binding.buttonSetSpinner.setOnClickListener(this)
         binding.spinnerDinamico.onItemSelectedListener = this
+        binding.seekbar.setOnSeekBarChangeListener(this)
 
-        // loadSpinner()
+        binding.seekbar.progress = 27
+        
     }
 
     override fun onClick(v: View) {
@@ -70,6 +74,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
         }
     }
 
+    override fun onProgressChanged(
+        seekBar: SeekBar,
+        progress: Int,
+        fromUser: Boolean
+    ) {
+        binding.textSeekbar.text = "$progress - $fromUser"
+    }
+
+    override fun onStartTrackingTouch(seekBar: SeekBar) {
+        Toast.makeText(this, "start tracking", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStopTrackingTouch(seekBar: SeekBar) {
+        Toast.makeText(this, "stop tracking", Toast.LENGTH_SHORT).show()
+    }
+
     override fun onItemSelected(
         parent: AdapterView<*>,
         view: View,
@@ -90,6 +110,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnIt
 
         binding.spinnerDinamico.adapter = adapter
     }
-
 
 }
