@@ -52,7 +52,7 @@
 
 <img src="./Assets/certificate.png" width="300px">
 
-<a href="[Certificate](https://www.udemy.com/certificate/UC-99bd274c-9b41-40ed-9dc5-4a6d57e1bb69/)"> 
+<a href="https://www.udemy.com/certificate/UC-99bd274c-9b41-40ed-9dc5-4a6d57e1bb69/"> 
 <img src="./Assets/kotlin-certificate.jpg">
 </a>
 
