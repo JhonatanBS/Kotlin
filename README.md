@@ -62,6 +62,13 @@
     <td>CLASS</td>
     <td><a href="">NONE</a></td>
   </tr>
+
+  <tr>
+    <td><a href="https://github.com/JhonatanBS/Paladar_Android" target="_blank">Paladar</a></td>
+    <td>Make and Wait your orders in application</td>
+    <td>PRIVATE</td>
+    <td><a href="">XML</a></td>
+  </tr>
   
 </table>
 
