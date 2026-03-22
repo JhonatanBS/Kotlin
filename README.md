@@ -69,6 +69,15 @@
     <td>PRIVATE</td>
     <td><a href="">XML</a></td>
   </tr>
+
+  <tr>
+    <td><a href="https://github.com/JhonatanBS/costs_Of_Travel/tree/main" target="_blank">Costs of Travel</a></td>
+    <td>Calculate the total cost of a vehicle trip.</td>
+    <td>CHALLENGE</td>
+    <td><a href="">XML</a></td>
+  </tr>
+
+  
   
 </table>
 
