@@ -83,7 +83,15 @@
     <td>PRIVATE</td>
     <td><a href="https://developer.android.com/compose">JETPACK COMPOSE</a></td>
   </tr>
+
+<tr>
+    <td><a href="https://github.com/JhonatanBS/ShoppingCart" target="_blank">ShoppingCart</a></td>
+    <td>Listing supermarket products with prices and units.</td>
+    <td>PRIVATE</td>
+    <td><a href="https://developer.android.com/compose">JETPACK COMPOSE</a></td>
+  </tr>
   
+ 
   
 </table>
 
