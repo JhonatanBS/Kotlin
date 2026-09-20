@@ -28,72 +28,66 @@
 <img src="./Assets/projects.png" width="300px">
 
 <table>
-  <tr>
-    <th>NAME</th>
-    <th>DESCRIPTION</th>
-    <th>TYPE</th>
-    <th>LIBRARY</th>
-  </tr>
-
-  <tr>
-    <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/oldAgeRetirement" target="_blank">Old Age Retirement</a></td>
-    <td>Calculating Old Age Retirement</td>
-    <td>CHALLENGE</td>
-    <td><a href="">NONE</a></td>
-  </tr>
-  
-  <tr>
-    <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/Motivation" target="_blank">Motivation</a></td>
-    <td>Generator of phrase</td>
-    <td>CLASS</td>
-    <td><a href="">NONE</a></td>
-  </tr>
-
-   <tr>
-    <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/mybooks" target="_blank">MyBooks</a></td>
-    <td>List of my books</td>
-    <td>CLASS</td>
-    <td><a href="">NONE</a></td>
-  </tr>
-
-  <tr>
-    <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/Tasks" target="_blank">Tasks</a></td>
-    <td>Creating my tasks for done</td>
-    <td>CLASS</td>
-    <td><a href="">NONE</a></td>
-  </tr>
-
-  <tr>
-    <td><a href="https://github.com/JhonatanBS/Paladar_Android" target="_blank">Paladar</a></td>
-    <td>Make and Wait your orders in application</td>
-    <td>PRIVATE</td>
-    <td><a href="">XML</a></td>
-  </tr>
-
-  <tr>
-    <td><a href="https://github.com/JhonatanBS/costs_Of_Travel/tree/main" target="_blank">Costs of Travel</a></td>
-    <td>Calculate the total cost of a vehicle trip.</td>
-    <td>CHALLENGE</td>
-    <td><a href="">XML</a></td>
-  </tr>
-
-<tr>
-    <td><a href="https://github.com/JhonatanBS/4Kalculator" target="_blank">4Kalculator</a></td>
-    <td>Basic and Advance Calculator with historic and measures.</td>
-    <td>PRIVATE</td>
-    <td><a href="https://developer.android.com/compose">JETPACK COMPOSE</a></td>
-  </tr>
-
-<tr>
-    <td><a href="https://github.com/JhonatanBS/ShoppingCart" target="_blank">ShoppingCart</a></td>
-    <td>Listing supermarket products with prices and units.</td>
-    <td>PRIVATE</td>
-    <td><a href="https://developer.android.com/compose">JETPACK COMPOSE</a></td>
-  </tr>
-  
- 
-  
+  <thead>
+    <tr>
+      <th>PROJECT</th>
+      <th>DESCRIPTION</th>
+      <th>TYPE</th>
+      <th>UI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/oldAgeRetirement" target="_blank">Old Age Retirement</a></td>
+      <td>Calculates retirement eligibility based on age.</td>
+      <td>CHALLENGE</td>
+      <td>XML</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/Motivation" target="_blank">Motivation</a></td>
+      <td>Generates motivational quotes.</td>
+      <td>CLASS</td>
+      <td>XML</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/mybooks" target="_blank">MyBooks</a></td>
+      <td>Displays a collection of books.</td>
+      <td>CLASS</td>
+      <td>XML</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/Kotlin/tree/main/Projects/Tasks" target="_blank">Tasks</a></td>
+      <td>Helps users create and manage tasks.</td>
+      <td>CLASS</td>
+      <td>XML</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/Paladar_Android" target="_blank">Paladar</a></td>
+      <td>An app for placing and managing food orders.</td>
+      <td>PRIVATE</td>
+      <td>XML</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/costs_Of_Travel/tree/main" target="_blank">Costs of Travel</a></td>
+      <td>Calculates the total cost of a vehicle trip.</td>
+      <td>CHALLENGE</td>
+      <td>XML</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/4Kalculator" target="_blank">4Kalculator</a></td>
+      <td>A calculator app featuring basic and advanced operations, calculation history, and unit conversions.</td>
+      <td>PRIVATE</td>
+      <td><a href="https://developer.android.com/compose" target="_blank">JETPACK COMPOSE</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JhonatanBS/ShoppingCart" target="_blank">ShoppingCart</a></td>
+      <td>Lists supermarket products, prices, and units.</td>
+      <td>PRIVATE</td>
+      <td><a href="https://developer.android.com/compose" target="_blank">JETPACK COMPOSE</a></td>
+    </tr>
+  </tbody>
 </table>
+
 
 <hr>
 
